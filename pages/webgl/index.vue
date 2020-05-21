@@ -1,31 +1,39 @@
 <template>
-  <section>
+  <div class="o-page webgl-page">
+    <section class="head">{{ $prismic.asText(title) }}</section>
+    <section class="projets-list">
+      <WebglProjectPreview
+          v-for="(p, i) in projects"
+          :key="i"
+          :datas="p.project"
+      />
+    </section>
     <!-- Slices block component -->
 <!--    <slices-block :slices="slices"/>-->
-  </section>
+  </div>
 </template>
 
 <script>
 // Imports for Prismic Slice components
+import WebglProjectPreview from '~/components/webgl/WebglProjectPreview'
 import SlicesBlock from '~/components/SlicesBlock.vue'
 
 export default {
-  name: 'page',
+  name: 'webgl-page',
   components: {
-    SlicesBlock
+    WebglProjectPreview,
+    SlicesBlock,
   },
   head () {
     return {
-      title: 'Ppp',
+      title: 'Projets WebGL',
     }
   },
   async asyncData({ $prismic, params, error }) {
     try{
       const document = (await $prismic.api.getSingle('webglpage')).data;
-      console.log(document);
       return {
-        // Set slices as variable
-        title: document.title
+        ...document,
       }
     } catch (e) {
       // Returns error page

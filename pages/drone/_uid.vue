@@ -20,13 +20,9 @@ export default {
     }
   },
   async asyncData({ $prismic, params, error }) {
-    console.log('params', params.uid);
-
     try{
       // Query to get post content
       const document = (await $prismic.api.getByUID('droneproject', params.uid)).data;
-      console.log(document);
-
       return {
         // Set slices as variable
         title: document.title

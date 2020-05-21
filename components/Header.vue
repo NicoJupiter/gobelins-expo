@@ -5,7 +5,7 @@
     <nav>
       <ul>
         <li v-for="(menuLink, i) in $store.state.global.navbar" :key="i">
-          <nuxt-link :to="menuLink.link.uid" >{{ menuLink.label }}</nuxt-link>
+          <nuxt-link :to="'/' + menuLink.link.uid" >{{ menuLink.label }}</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -14,9 +14,7 @@
 
 <script>
 export default {
-  name: 'header-prismic',
-  mounted() {
-  }
+  name: 'header',
 }
 </script>
 

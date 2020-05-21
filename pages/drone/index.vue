@@ -22,7 +22,6 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try{
       const document = (await $prismic.api.getSingle('dronepage')).data;
-      console.log(document);
       return {
         // Set slices as variable
         title: document.title
