@@ -11,8 +11,5 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-@media (max-width: 767px)
-  .content-section
-    margin-bottom: 2rem
+<style lang="scss" scoped>
 </style>

@@ -45,13 +45,4 @@ export default {
   margin-top: -20px
   text-transform: uppercase
 
-@media (max-width: 767px)
-  .content-section
-    margin-bottom: 2rem
-  .gallery-item
-    -webkit-box-flex: 100%
-    -moz-box-flex: 100%
-    -webkit-flex: 100%
-    -ms-flex: 100%
-    flex: 100%
 </style>

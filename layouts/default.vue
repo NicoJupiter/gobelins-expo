@@ -1,19 +1,19 @@
 <template>
   <div>
-    <Header />
+    <CustomHeader />
     <nuxt />
-    <footer-prismic/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import FooterPrismic from '~/components/FooterPrismic.vue'
+import CustomHeader from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
-    Header,
-    FooterPrismic
+    CustomHeader,
+    Footer
   },
   head () {
     return {

@@ -2,10 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7075cc3e-974c-4d5c-8169-32be8a49220b/deploy-status)](https://app.netlify.com/sites/expo-gobelins/deploys)
 
-## Check out our article for a step by step guide to getting this project up and running
-
-> [Prismic project guide](https://user-guides.prismic.io/examples/nuxt-js-samples/nuxtjs-sample-multi-page-website-with-navigation)
-
 
 ## Launch this project in your local environment
 

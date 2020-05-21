@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h1>{{ $prismic.asText(title) }}</h1>
-    <p>{{ $prismic.asText(description) }}</p>
+    <h1 class="homepage__title">{{ $prismic.asText(title) }}</h1>
+    <p class="homepage__desc">{{ $prismic.asText(description) }}</p>
 
     <!-- Banner component -->
 <!--    <homepage-banner :banner="banner"/>-->
@@ -48,3 +48,9 @@ export default {
   },
 }
 </script>
+
+<style lang="sass" scoped>
+  .homepage__title
+    text-align: center
+    margin: 320px auto
+</style>

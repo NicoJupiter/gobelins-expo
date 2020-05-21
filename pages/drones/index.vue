@@ -4,7 +4,7 @@
       <h1 class="head__title">{{ $prismic.asText(title) }}</h1>
     </section>
     <section class="projets-list">
-      <WebglProjectPreview
+      <DroneProjectPreview
           v-for="(p, i) in projects"
           :key="i"
           :uid="p.uid"
@@ -18,23 +18,23 @@
 
 <script>
 // Imports for Prismic Slice components
-import WebglProjectPreview from '~/components/webgl/WebglProjectPreview'
+import DroneProjectPreview from '~/components/drone/DroneProjectPreview'
 import SlicesBlock from '~/components/SlicesBlock.vue'
 
 export default {
   name: 'webgl-page',
   components: {
-    WebglProjectPreview,
+    DroneProjectPreview,
     SlicesBlock,
   },
   head () {
     return {
-      title: 'Projets WebGL',
+      title: 'Projets Drones',
     }
   },
   async asyncData({ $prismic, params, error }) {
     try{
-      const document = (await $prismic.api.getSingle('webglpage')).data;
+      const document = (await $prismic.api.getSingle('dronepage')).data;
       const projectsIds = document.projects.map(p => p.project.id);
       const projects = (await $prismic.api.getByIDs(projectsIds)).results;
 

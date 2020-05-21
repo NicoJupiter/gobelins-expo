@@ -54,6 +54,7 @@ export default {
     // mofules for full static before `nuxt export` (coming in v2.12)
     '@/modules/static',
     '@/modules/crawler',
+    '@nuxtjs/style-resources',
     // https://prismic-nuxt.js.org/
     '@nuxtjs/prismic'
   ],

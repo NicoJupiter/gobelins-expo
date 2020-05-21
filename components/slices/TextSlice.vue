@@ -23,14 +23,5 @@ export default {
 
 .text-section-1col p:last-child, .text-section-2col p:last-child, .content-section.text-section-2col
   margin-bottom: 0
-
-@media (max-width: 767px)
-  .text-section-2col
-    -webkit-column-count: 1
-    -moz-column-count: 1
-    column-count: 1
-    -webkit-column-gap: 40px
-    -moz-column-gap: 40px
-    column-gap: 40px
 </style>
 

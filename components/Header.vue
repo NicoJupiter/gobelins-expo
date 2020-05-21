@@ -1,75 +1,33 @@
 <template>
   <header class="site-header">
-    <!--<p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>-->
     <nuxt-link to="/" class="logo">Expo Gobelins</nuxt-link>
-    <nav>
-      <ul>
-        <li v-for="(menuLink, i) in $store.state.global.navbar" :key="i">
-          <nuxt-link :to="'/' + menuLink.link.uid" >{{ menuLink.label }}</nuxt-link>
-        </li>
-      </ul>
+    <nav class="site-header__nav">
+      <nuxt-link
+          v-for="(menuLink, i) in $store.state.global.navbar"
+          :key="i"
+          class="site-header__link"
+          :to="'/' + menuLink.link.uid" >
+        {{ menuLink.label }}
+      </nuxt-link>
     </nav>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'header',
+  name: 'CustomHeader',
 }
 </script>
 
-<style lang="sass">
-.site-header
-  height: 30px
-  padding: 20px 0
-  color: #484d52
-  font-weight: 700
-  a
-    color: #484d52
-    font-weight: 700
-  nav a:hover
-    color: #72767B
-
-
-.site-header
-  .logo
-    display: inline-block
-    font-size: 22px
-    font-weight: 900
-  nav
-    float: right
-    ul
-      margin: 0
-      padding-left: 0
-    li
-      display: inline-block
-      margin-left: 40px
-
-@media (max-width: 1060px)
-  .site-header
-    padding-left: 20px
-    padding-right: 20px
-
-@media (max-width: 767px)
-  .site-header
-    height: auto
-
-  .homepage .site-header
-    position: absolute
-    left: 0
-    right: 0
-
-  .site-header
-    .logo
-      display: block
-      text-align: center
-    nav
-      float: none
-      text-align: center
-      li
-        display: inline-block
-        margin-left: 10px
-        margin-right: 10px
+<style lang="scss">
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+  .site-header__link {
+    margin-right: 24px;
+  }
 </style>
 
 

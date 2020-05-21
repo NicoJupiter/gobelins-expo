@@ -23,7 +23,7 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try{
       // Query to get post content
-      const document = (await $prismic.api.getByUID('webglproject', params.uid)).data;
+      const document = (await $prismic.api.getByUID('droneproject', params.uid)).data;
       return {
         // Set slices as variable
         title: document.title
