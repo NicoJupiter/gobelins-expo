@@ -1,24 +1,24 @@
 export const state = () => ({
-  menu: {}
+  global: {}
 })
 
 export const mutations = {
-  SET_MENU(state, menu) {
-    state.menu = menu
+  SET_GLOBAL(state, global) {
+    state.global = global
   },
   SET_ERROR(state, error) {
-    state.menu = error
+    state.global = error
   }
 }
 
 export const actions = {
-  async fetchMenu({ commit }, $prismic) {
+  async fetchGlobal({ commit }, $prismic) {
     try {
-      const menu = (await $prismic.api.getSingle('menu')).data
+      const global = (await $prismic.api.getSingle('settings')).data;
 
-      commit('SET_MENU', menu)
+      commit('SET_GLOBAL', global);
     } catch (e) {
-      const error = 'Please create a menu document'
+      const error = 'Global settings not found';
 
       commit('SET_ERROR', error);
     }

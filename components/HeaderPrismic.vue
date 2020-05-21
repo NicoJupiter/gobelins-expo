@@ -1,20 +1,22 @@
 <template>
   <header class="site-header">
-    <!--<p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>
-    <nuxt-link to="/" class="logo">{{ $prismic.asText($store.state.menu.title) }}</nuxt-link>
+    <!--<p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>-->
+    <nuxt-link to="/" class="logo">Expo Gobelins</nuxt-link>
     <nav>
       <ul>
-        <li v-for="menuLink in $store.state.menu.menu_links" :key="menuLink.id">
-          <prismic-link :field="menuLink.link">{{ $prismic.asText(menuLink.label) }}</prismic-link>
+        <li v-for="(menuLink, i) in $store.state.global.navbar" :key="i">
+          <nuxt-link :to="menuLink.link.uid" >{{ menuLink.label }}</nuxt-link>
         </li>
       </ul>
-    </nav>-->
+    </nav>
   </header>
 </template>
 
 <script>
 export default {
   name: 'header-prismic',
+  mounted() {
+  }
 }
 </script>
 
@@ -30,12 +32,6 @@ export default {
   nav a:hover
     color: #72767B
 
-.homepage .site-header
-  color: #ffffff
-  a
-    color: #ffffff
-  nav a:hover
-    color: #c8c9cb
 
 .site-header
   .logo

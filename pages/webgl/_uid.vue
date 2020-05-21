@@ -20,8 +20,6 @@ export default {
     }
   },
   async asyncData({ $prismic, params, error }) {
-    console.log('params', params.uid);
-
     try{
       // Query to get post content
       const document = (await $prismic.api.getByUID('webglproject', params.uid)).data;
