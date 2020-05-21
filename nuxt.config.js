@@ -28,9 +28,18 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/css/resetr.css',
-    '@/assets/css/common.css'
+    '@/assets/styles/style.scss',
   ],
+  styleResources: {
+    scss: [
+      'assets/styles/0-settings/_settings-color.scss',
+      'assets/styles/0-settings/_settings-media.scss',
+      'assets/styles/0-settings/_settings-mixins.scss',
+      'assets/styles/0-settings/_settings-typography.scss',
+      'assets/styles/0-settings/_settings-miscellaneous.scss',
+      'assets/styles/3-utilities/_utilities-link.scss',
+    ],
+  },
 
   /*
   ** Plugins to load before mounting the App

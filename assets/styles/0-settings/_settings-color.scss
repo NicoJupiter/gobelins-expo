@@ -1,0 +1,42 @@
+/*
+ * [ settings / colors ]
+ */
+
+// -----------------------------------------------------------------------------
+
+// 1. Default color palette
+// ====================================
+
+$black:                #000000;
+$white:                #FFFFFF;
+$white-light:          rgba(255, 255, 255, .25);
+
+$gray-light: #faf9f8;
+$gray:                 #F6F5F4;
+$gray-dark:            #D8D8D8;
+$gray-darker:          rgba(0, 0, 0, .6);
+$gray-darkest:         rgba(0, 0, 0, .3);
+
+//$primary-darkest:      #2b0c0c;
+//$primary-darker:       #6b1e1e;
+$primary-dark:         #005475;
+$primary:              #006E90;
+$primary-light:        #0D308B;
+$primary-lighter:      #106180;
+//$primary-lightest:     rgba(10, 49, 77, .15);
+//$primary-menu:         #437AA5;
+
+//$secondary-darkest:    #12200d;
+//$secondary-darker:     #7b5914;
+//$secondary-dark:       #977020;
+$secondary-dark:       #6a0b2c;
+$secondary:            #A30B37;
+//$secondary-contrast:   #a06c00;
+//$secondary-light:      rgba(196, 164, 98, .4);
+//$secondary-lighter:    rgba(196, 164, 98, .3);
+//$secondary-lightest:   rgba(196, 164, 98, .1);
+
+
+$color-body:      $white;
+$color-text:      $black;
+$color-link:      $secondary;
