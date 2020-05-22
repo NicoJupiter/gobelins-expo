@@ -45,6 +45,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    // { src: '~/plugins/three', ssr: false },
   ],
 
   /*
@@ -75,7 +76,7 @@ export default {
     extend(config, ctx) {
       // to transform link with <nuxt-link> for the htmlSerializer
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
-    }
+    },
   },
 
   generate: {
