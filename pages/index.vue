@@ -1,5 +1,8 @@
 <template>
   <section>
+    <client-only placeholder="loading...">
+      <Scene />
+    </client-only>
     <h1 class="homepage__title">{{ $prismic.asText(title) }}</h1>
     <p class="homepage__desc">{{ $prismic.asText(description) }}</p>
 
@@ -15,6 +18,7 @@
 import HomepageBanner from '~/components/HomepageBanner.vue'
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import TextSlice from '~/components/slices/TextSlice.vue'
+import Scene from '~/components/Scene.vue'
 
 export default {
   name: 'Home',
@@ -23,6 +27,7 @@ export default {
     HomepageBanner,
     SlicesBlock,
     TextSlice,
+    Scene,
   },
   head() {
     const seo = this.tab.find(t => t.slice_type === 'seo');
@@ -97,4 +102,6 @@ export default {
   .homepage__title
     text-align: center
     margin: 320px auto
+    user-select: none
+    pointer-events: none
 </style>
