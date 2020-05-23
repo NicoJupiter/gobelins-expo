@@ -13,6 +13,7 @@
 
 <script>
 import * as THREE from 'three';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export default {
   name: 'Scene',
@@ -41,6 +42,9 @@ export default {
       const light = new THREE.HemisphereLight( 0xffffff, 0x020202, 2 );
       this.scene.add( light );
 
+      this.controls = new OrbitControls( this.camera, this.renderer.domElement);
+      this.controls.update();
+
       this.createCube();
       this.mainLoop();
     },
@@ -53,6 +57,8 @@ export default {
     mainLoop() {
       this.cube.rotation.x += 0.01;
       this.cube.rotation.y += 0.01;
+
+      this.controls.update();
 
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.mainLoop);
