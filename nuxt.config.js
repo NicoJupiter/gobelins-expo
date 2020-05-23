@@ -70,6 +70,9 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: [
+      'three'
+    ],
     /*
     ** You can extend webpack config here
     */
