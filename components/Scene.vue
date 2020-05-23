@@ -1,5 +1,5 @@
 <template>
-
+  <canvas ref="canvas" />
 </template>
 
 <style>
@@ -34,6 +34,7 @@ export default {
   methods: {
     init() {
       this.scene.background = new THREE.Color(0xababab);
+      this.renderer = new THREE.WebGLRenderer({ canvas });
       this.renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( this.renderer.domElement );
 
