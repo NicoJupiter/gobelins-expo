@@ -46,6 +46,19 @@ export default {
   */
   plugins: [
     // { src: '~/plugins/three', ssr: false },
+    '~/plugins/vue-lazyload',
+    {
+      src: '~/plugins/color',
+      ssr: false,
+    },
+    {
+      src: '~/plugins/directives',
+      ssr: false,
+    },
+    {
+      src: '~/plugins/split',
+      ssr: false,
+    },
   ],
 
   /*

@@ -17,6 +17,7 @@
       >
         <div>
           <h3>{{ $prismic.asText(p.data.title) }}</h3>
+          <Asset v-if="p.data.main_image && p.data.main_image.url" :datas="p.data.main_image" />
         </div>
       </n-link>
     </div>
@@ -30,10 +31,11 @@
 
 <script>
   // Imports for all components
-  import HomepageBanner from '~/components/HomepageBanner.vue'
-  import SlicesBlock from '~/components/SlicesBlock.vue'
-  import TextSlice from '~/components/slices/TextSlice.vue'
-  import Scene from '~/components/Scene.vue'
+  import HomepageBanner from '~/components/HomepageBanner';
+  import SlicesBlock from '~/components/SlicesBlock';
+  import TextSlice from '~/components/slices/TextSlice';
+  import Scene from '~/components/Scene';
+  import Asset from '~/components/common/Asset';
   import { PAGES_SLUG } from "../constantes";
 
   export default {
@@ -44,6 +46,7 @@
       SlicesBlock,
       TextSlice,
       Scene,
+      Asset,
     },
     head() {
       const seo = this.tab.find(t => t.slice_type === 'seo');
@@ -136,10 +139,11 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .homepage__title
-    text-align: center
-    margin: 320px auto
-    user-select: none
-    pointer-events: none
+<style lang="scss" scoped>
+  .homepage__title {
+    text-align: center;
+    margin: 320px auto;
+    user-select: none;
+    pointer-events: none;
+  }
 </style>
