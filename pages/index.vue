@@ -116,10 +116,10 @@
         const projectsIds = [...dronesDocs.projects, ...webglDocs.projects].map(p => p.project.id);
         let projects = (await $prismic.api.getByIDs(projectsIds)).results;
 
-
+        console.log(projects);
         projects = projects.map(p => ({
           ...p,
-          slug: `${PAGES_SLUG[p.type]}/${p.slugs[0]}`,
+          slug: `${PAGES_SLUG[p.type]}/${p.uid}`,
         }));
 
         return {
