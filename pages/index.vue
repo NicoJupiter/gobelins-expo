@@ -1,10 +1,18 @@
 <template>
   <section>
+    <!--
     <client-only placeholder="loading...">
       <Scene />
     </client-only>
+    -->
     <h1 class="homepage__title">{{ $prismic.asText(title) }}</h1>
     <p class="homepage__desc">{{ $prismic.asText(description) }}</p>
+
+    <div class="project-container">
+      <div class="project" v-for="(p, i) in projects" :key="i">
+        <h3>{{ $prismic.asText(p.data.title) }}</h3>
+      </div>
+    </div>
 
     <!-- Banner component -->
 <!--    <homepage-banner :banner="banner"/>-->
@@ -82,10 +90,16 @@ export default {
       // Query to get the home page content
       const { title, description, body1 } = (await $prismic.api.getSingle('homepage')).data;
 
+      const dronesDocs = (await $prismic.api.getSingle('webglpage')).data;
+      const webglDocs = (await $prismic.api.getSingle('dronepage')).data;
+      const projectsIds = [...dronesDocs.projects, ...webglDocs.projects].map(p => p.project.id);
+      const projects = (await $prismic.api.getByIDs(projectsIds)).results;
+
       return {
         title,
         description,
-        tab: body1
+        tab: body1,
+        projects,
         // Page content
         // banner: homepage.homepage_banner[0],
         // Set slices as variable
