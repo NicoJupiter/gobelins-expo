@@ -19,9 +19,14 @@
     },
     mounted() {
       if (process.server) return;
-      this.instance = Panzoom(this.$refs.panArea);
-      this.instance.on('panstart', (e) => this.$store.commit('SET_PANNING', true));
-      this.instance.on('panend', (e) => {
+      this.instance = Panzoom(this.$refs.panArea, {
+        maxZoom: 1,
+        minZoom: 0.3,
+        bounds: true,
+        boundsPadding: 0.1
+      });
+      this.instance.on('panstart', () => this.$store.commit('SET_PANNING', true));
+      this.instance.on('panend', () => {
         setTimeout(() => this.$store.commit('SET_PANNING', false), 500);
       });
     }

@@ -117,10 +117,10 @@
 
         const dronesDocs = (await $prismic.api.getSingle('webglpage')).data;
         const webglDocs = (await $prismic.api.getSingle('dronepage')).data;
-        const projectsIds = [...dronesDocs.projects, ...webglDocs.projects].map(p => p.project.id);
+        const festivalDocs = (await $prismic.api.getSingle('annecy-festival')).data;
+        const projectsIds = [...dronesDocs.projects, ...webglDocs.projects, ...festivalDocs.projects].map(p => p.project.id);
         let projects = (await $prismic.api.getByIDs(projectsIds)).results;
 
-        console.log(projects);
         projects = projects.map(p => ({
           ...p,
           slug: `${PAGES_SLUG[p.type]}/${p.uid}`,
