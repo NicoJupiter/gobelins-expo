@@ -20,7 +20,7 @@ $gray-darkest:         rgba(0, 0, 0, .3);
 //$primary-darkest:      #2b0c0c;
 //$primary-darker:       #6b1e1e;
 $primary-dark:         #005475;
-$primary:              #006E90;
+$primary:              #2A2AF2;
 $primary-light:        #0D308B;
 $primary-lighter:      #106180;
 //$primary-lightest:     rgba(10, 49, 77, .15);
@@ -37,6 +37,6 @@ $secondary:            #A30B37;
 //$secondary-lightest:   rgba(196, 164, 98, .1);
 
 
-$color-body:      $white;
-$color-text:      $black;
+$color-body:      $primary;
+$color-text:      $white;
 $color-link:      $secondary;

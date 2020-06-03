@@ -84,7 +84,7 @@ export default {
   */
   build: {
     transpile: [
-      'three'
+      'three',
     ],
     /*
     ** You can extend webpack config here

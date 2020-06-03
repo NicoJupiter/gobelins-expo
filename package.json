@@ -14,9 +14,11 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.1.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@panzoom/panzoom": "^4.1.0",
     "cookies": "^0.8.0",
     "imagesloaded": "^4.1.4",
     "nuxt": "^2.11.0",
+    "panzoom": "^9.2.4",
     "prismic-javascript": "^2.1.5",
     "prismic-vue": "^2.0.0",
     "three": "^0.116.1",

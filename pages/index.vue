@@ -1,32 +1,34 @@
 <template>
-  <section>
+  <div class="home-page">
     <!--
     <client-only placeholder="loading...">
       <Scene />
     </client-only>
     -->
-    <h1 class="homepage__title">{{ $prismic.asText(title) }}</h1>
-    <p class="homepage__desc">{{ $prismic.asText(description) }}</p>
-
-    <div class="project-container">
+    <PanArea>
       <n-link
           v-for="(p, i) in projects"
           :key="i"
+          draggable="false"
           :to="p.slug"
+          :event="isPanning ? '' : 'click'"
           class="project"
       >
-        <div>
+        <div class="project__container">
           <h3>{{ $prismic.asText(p.data.title) }}</h3>
-          <Asset v-if="p.data.main_image && p.data.main_image.url" :datas="p.data.main_image" />
         </div>
       </n-link>
-    </div>
+    </PanArea>
+    <h1 class="homepage__title">{{ $prismic.asText(title) }}</h1>
+    <p class="homepage__desc">{{ $prismic.asText(description) }}</p>
+
+
 
     <!-- Banner component -->
     <!--    <homepage-banner :banner="banner"/>-->
     <!-- Slices block component -->
     <!--    <slices-block :slices="slices"/>-->
-  </section>
+  </div>
 </template>
 
 <script>
@@ -35,6 +37,7 @@
   import SlicesBlock from '~/components/SlicesBlock';
   import TextSlice from '~/components/slices/TextSlice';
   import Scene from '~/components/Scene';
+  import PanArea from '~/components/PanArea';
   import Asset from '~/components/common/Asset';
   import { PAGES_SLUG } from "../constantes";
 
@@ -47,6 +50,7 @@
       TextSlice,
       Scene,
       Asset,
+      PanArea,
     },
     head() {
       const seo = this.tab.find(t => t.slice_type === 'seo');
@@ -136,6 +140,16 @@
         error({ statusCode: 404, message: 'Page not found' })
       }
     },
+    computed: {
+      isPanning() {
+        return this.$store.state.isPanning;
+      }
+    },
+    methods: {
+      preventLink(e) {
+        e.preventDefault()
+      }
+    }
   }
 </script>
 
@@ -145,5 +159,19 @@
     margin: 320px auto;
     user-select: none;
     pointer-events: none;
+  }
+
+  .project__card-container {
+    position: relative;
+  }
+  .project__container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+
   }
 </style>
