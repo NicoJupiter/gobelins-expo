@@ -1,12 +1,18 @@
 <template>
-  <nuxt-link :to="link" class="project-preview">
+  <div :to="link" class="project-preview" draggable="false">
     <h3 class="project-preview__title">{{ $prismic.asText(data.title) }}</h3>
-  </nuxt-link>
+    <Asset :datas="data.image" />
+  </div>
 </template>
 
 <script>
+  import Asset from '@/components/common/Asset';
+
   export default {
     name: "FestivalProjectPreview",
+    components: {
+      Asset,
+    },
     props: {
       uid: {
         type: String,
@@ -27,14 +33,18 @@
         return `${this.$route.path}/${this.uid}`;
       }
     },
+    mounted() {
+      console.log(this.data.image);
+    }
   }
 </script>
 
 <style scoped>
   .project-preview {
     display: block;
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
     background-color: #fff;
   }
 </style>

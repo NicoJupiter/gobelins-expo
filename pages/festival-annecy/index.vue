@@ -4,14 +4,14 @@
       <h1 class="head__title">{{ $prismic.asText(title) }}</h1>
     </section>
     <section class="projets-list">
-      <VueHorizontalList :items="projects" :options="options">
-        <template v-slot:default="{item}">
+      <VueSlickCarousel v-bind="settings" ref="carousel">
           <FestivalProjectPreview
+              v-for="(item, i) in projects"
+              :key="i"
               :uid="item.uid"
               :data="item.data"
           />
-        </template>
-      </VueHorizontalList>
+      </VueSlickCarousel>
     </section>
     <!-- Slices block component -->
 <!--    <slices-block :slices="slices"/>-->
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import VueHorizontalList from 'vue-horizontal-list';
-
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // Imports for Prismic Slice components
 import FestivalProjectPreview from '~/components/festival/FestivalProjectPreview'
 import SlicesBlock from '~/components/SlicesBlock.vue'
@@ -30,7 +30,7 @@ export default {
   components: {
     FestivalProjectPreview,
     SlicesBlock,
-    VueHorizontalList,
+    VueSlickCarousel,
   },
   head () {
     return {
@@ -54,40 +54,19 @@ export default {
   },
   data() {
     return {
-      options: {
-        item: {
-          // css class to inject into each individual item
-          class: '',
-          // padding between each item
-          padding: 12
-        },
-        list: {
-          // css class for the parent of item
-          class: '',
-          // maximum width of the list it can extend to before switching to windowed mode, basically think of the bootstrap container max-width
-          // windowed is used to toggle between full-screen mode and container mode
-          windowed: 1200,
-          // padding of the list, if container < windowed what is the left-right padding of the list
-          // during full-screen mode the padding will added to left & right to centralise the item
-          padding: 24
-        },
-        responsive: [
-          // responsive breakpoints to calculate how many items to show in the list at each width interval
-          // it will always fall back to these:
-          {end: 576, size: 1},
-          {start: 576, end: 768, size: 2},
-          {start: 768, end: 992, size: 3},
-          {start: 992, end: 1200, size: 4},
-          {start: 1200, size: 5}
-        ],
-        navigation: {
-          // when to show navigation
-          start: 992,
-          color: '#000'
-        }
+      settings: {
+        centerMode: true,
+        centerPadding: '145px',
+        focusOnSelect: true,
+        infinite: true,
+        slidesToShow: 1,
+        speed: 500
       },
     }
   },
+  mounted() {
+    console.log(this.$refs.carousel);
+  }
 }
 </script>
 
