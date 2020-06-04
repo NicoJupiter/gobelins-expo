@@ -1,5 +1,5 @@
 <template>
-  <prismic-rich-text class="content-section" :class="'text-section-' + slice.slice_label" :field="slice.primary.rich_text"/>
+  <prismic-rich-text class="content-section" :class="'text-section-' + slice.slice_label" :field="slice.primary.text"/>
 </template>
 
 <script>

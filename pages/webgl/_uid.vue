@@ -2,7 +2,7 @@
   <section class="webgl-project">
     <h1 class="webgl-project__title">{{ $prismic.asText(title) }}</h1>
     <!-- Slices block component -->
-<!--    <slices-block :slices="slices"/>-->
+    <slices-block :slices="slices"/>
   </section>
 </template>
 
