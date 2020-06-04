@@ -3,7 +3,7 @@
         <!-- Slice section template -->
         <section v-for="(slice, index) in slices" :key="'slice-' + index">
             <!-- Text slice component -->
-            <template v-if="slice.slice_type === 'text_section'">
+            <template v-if="slice.slice_type === 'text'">
                 <text-slice :slice="slice"/>
             </template>
             <!-- Quote slice component -->
