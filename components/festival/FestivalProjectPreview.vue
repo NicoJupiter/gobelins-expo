@@ -31,5 +31,10 @@
 </script>
 
 <style scoped>
-
+  .project-preview {
+    display: block;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+  }
 </style>

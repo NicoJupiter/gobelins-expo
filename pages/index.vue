@@ -54,6 +54,7 @@
     },
     head() {
       const seo = this.tab.find(t => t.slice_type === 'seo');
+      const image = seo.primary.seo_image;
       const keywords = seo.items.map(item => item.seo_keywords);
       if (!seo) return {};
       return {
@@ -74,29 +75,27 @@
             name: 'keywords',
             content: seo.items.length ? keywords.join(', ') : ''
           },
-          /*
            { hid: 'og:image',
            property: 'og:image',
-           content: this.datas.fields.seo.fields.image ? this.datas.fields.seo.fields.image.fields.file.url : '' },
+           content: image ? image.url : '' },
            { hid: 'og:image:width',
            property: 'og:image:width',
-           content: this.datas.fields.seo.fields.image ? this.datas.fields.seo.fields.image.fields.file.details.image.width : '' },
+           content: image ? image.dimensions.width : '' },
            {
            hid: 'og:image:height',
            property: 'og:image:height',
-           content: this.datas.fields.seo.fields.image ? this.datas.fields.seo.fields.image.fields.file.details.image.height : '',
+           content: image ? image.dimensions.height : '',
+           },
+           /*{
+           hid: 'og:image:type',
+           property: 'og:image:type',
+           content: image ? image.contentType : '',
            },
            {
            hid: 'og:image:type',
            property: 'og:image:type',
-           content: this.datas.fields.seo.fields.image ? this.datas.fields.seo.fields.image.fields.file.contentType : '',
-           },
-           {
-           hid: 'og:image:type',
-           property: 'og:image:type',
-           content: this.datas.fields.seo.fields.image ? this.datas.fields.seo.fields.image.fields.file.contentType : '',
-           },
-           */
+           content: image ? image.contentType : '',
+           },*/
           {
             hid: 'og:url',
             property: 'og:url',
