@@ -2,7 +2,7 @@
   <section class="webgl-project">
     <h1 class="webgl-project__title">{{ $prismic.asText(title) }}</h1>
     <!-- Slices block component -->
-    <slices-block :slices="slices"/>
+<!--    <slices-block :slices="slices"/>-->
   </section>
 </template>
 
@@ -23,11 +23,12 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try{
       // Query to get post content
-      const document = (await $prismic.api.getByUID('webglproject', params.uid)).data;
+      const document = (await $prismic.api.getByUID('festivalproject', params.uid)).data;
       return {
         // Set slices as variable
         title: document.title,
         tab: document.body1,
+
       }
     } catch (e) {
       // Returns error page

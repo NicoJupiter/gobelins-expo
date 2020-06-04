@@ -10,9 +10,8 @@
     // Imports for Prismic Slice components
     import SlicesBlock from '~/components/SlicesBlock.vue'
 
-    export default {
+export default {
         name: 'page',
-
         components: {
             SlicesBlock
         }, data() {
@@ -29,7 +28,6 @@
             try {
                 // Query to get post content
                 const document = (await $prismic.api.getByUID('droneproject', params.uid)).data;
-                console.log(document.body1[1]);
                 return {
                     // Set slices as variable
                     title: document.title,

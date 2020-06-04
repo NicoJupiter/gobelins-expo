@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-primary;
   font-weight: 500;
   margin: 0;
-  color: $primary;
+  color: $white;
 
   p {
     line-height: $line-height-headings;
@@ -34,7 +34,6 @@ h2 {
 
 h3 {
   font-size: 2rem;
-  color: $primary;
 }
 
 h4 {

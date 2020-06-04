@@ -1,5 +1,6 @@
 export const state = () => ({
-  global: {}
+  global: {},
+  isPanning: false,
 })
 
 export const mutations = {
@@ -8,8 +9,11 @@ export const mutations = {
   },
   SET_ERROR(state, error) {
     state.global = error
+  },
+  SET_PANNING(state, value) {
+    state.isPanning = value;
   }
-}
+};
 
 export const actions = {
   async fetchGlobal({ commit }, $prismic) {

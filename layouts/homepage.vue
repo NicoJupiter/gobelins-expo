@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="home-page">
     <CustomHeader />
     <nuxt />
     <Footer />
@@ -26,3 +26,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .home-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+</style>

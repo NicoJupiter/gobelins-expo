@@ -6,7 +6,8 @@
           v-for="(menuLink, i) in $store.state.global.navbar"
           :key="i"
           class="site-header__link"
-          :to="'/' + menuLink.link.uid" >
+          :to="'/' + menuLink.link.uid"
+      >
         {{ menuLink.label }}
       </nuxt-link>
     </nav>
