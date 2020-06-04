@@ -27,10 +27,11 @@ export default {
     SlicesBlock,
   },
   head() {
+    if (!this.tab) return {};
     const seo = this.tab.find(t => t.slice_type === 'seo');
+    if (!seo) return {};
     const image = seo.primary.seo_image;
     const keywords = seo.items.map(item => item.seo_keywords);
-    if (!seo) return {};
     return {
       title: seo.primary.seo_title,
       meta: [
@@ -91,6 +92,7 @@ export default {
 
       return {
         title: document.title,
+        tab: document.body1,
         projects
       }
     } catch (e) {

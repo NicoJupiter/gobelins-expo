@@ -1,7 +1,9 @@
 <template>
-  <div :to="link" class="project-preview" draggable="false">
-    <h3 class="project-preview__title">{{ $prismic.asText(data.title) }}</h3>
-    <Asset :datas="data.image" />
+  <div class="project-preview">
+    <div :to="link" class="project-preview__container" draggable="false">
+      <Asset :datas="data.image" />
+      <h3 class="project-preview__title">{{ $prismic.asText(data.title) }}</h3>
+    </div>
   </div>
 </template>
 
@@ -33,18 +35,16 @@
         return `${this.$route.path}/${this.uid}`;
       }
     },
-    mounted() {
-      console.log(this.data.image);
-    }
   }
 </script>
 
 <style scoped>
   .project-preview {
     display: block;
-    width: 100%;
+  }
+  .project-preview__container {
     height: 500px;
-    margin: 0 auto;
-    background-color: #fff;
+    margin: 0 55px;
+    color: #fff;
   }
 </style>

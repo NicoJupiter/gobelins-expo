@@ -40,7 +40,8 @@ export default {
 
       return {
         title: document.title,
-        projects
+        tab: document.body1,
+        projects,
       }
     } catch (e) {
       // Returns error page

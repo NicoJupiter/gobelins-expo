@@ -45,6 +45,7 @@ export default {
 
       return {
         title: document.title,
+        tab: document.body1,
         projects
       }
     } catch (e) {
@@ -55,8 +56,9 @@ export default {
   data() {
     return {
       settings: {
+        arrows: false,
         centerMode: true,
-        centerPadding: '145px',
+        centerPadding: '200px',
         focusOnSelect: true,
         infinite: true,
         slidesToShow: 1,
@@ -70,9 +72,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .head__title {
-    margin: 320px auto;
+    margin: 100px auto;
     text-align: center;
   }
 </style>

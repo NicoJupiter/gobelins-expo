@@ -26,7 +26,9 @@ export default {
       const document = (await $prismic.api.getByUID('festivalproject', params.uid)).data;
       return {
         // Set slices as variable
-        title: document.title
+        title: document.title,
+        tab: document.body1,
+
       }
     } catch (e) {
       // Returns error page

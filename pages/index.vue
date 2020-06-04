@@ -54,9 +54,9 @@
     },
     head() {
       const seo = this.tab.find(t => t.slice_type === 'seo');
+      if (!seo) return {};
       const image = seo.primary.seo_image;
       const keywords = seo.items.map(item => item.seo_keywords);
-      if (!seo) return {};
       return {
         title: seo.primary.seo_title,
         meta: [
