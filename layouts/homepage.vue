@@ -32,5 +32,10 @@ export default {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    cursor: grab;
+  }
+
+  .home-page:active {
+    cursor: grabbing;
   }
 </style>
